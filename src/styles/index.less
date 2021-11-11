@@ -1,0 +1,102 @@
+@import '~antd/es/style/themes/default.less';
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-left-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/**
+多行文本省略
+*/
+.LoopMultiLine(@index) when(@index<11) {
+  .multi-line-@{index} {
+    max-width: 100px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: @index;
+    -webkit-line-clamp: @index;
+    overflow: hidden;
+  }
+
+  .LoopMultiLine(@index+1);
+}
+
+.LoopMultiLine(1);
+
+/*
+ margin
+*/
+.LoopMargin(@index) when(@index<101) {
+  .ml@{index} {
+    margin-left: @index * 1px;
+  }
+
+  .mt@{index} {
+    margin-top: @index * 1px;
+  }
+
+  .mr@{index} {
+    margin-right: @index * 1px;
+  }
+
+  .mb@{index} {
+    margin-bottom: @index * 1px;
+  }
+
+  .pl@{index} {
+    padding-left: @index * 1px;
+  }
+
+  .pt@{index} {
+    padding-top: @index * 1px;
+  }
+
+  .pr@{index} {
+    padding-right: @index * 1px;
+  }
+
+  .pb@{index} {
+    padding-bottom: @index * 1px;
+  }
+
+  .LoopMargin(@index+1);
+}
+
+.LoopMargin(1);
+
+#root {
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.color-red {
+  color: @error-color;
+}

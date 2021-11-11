@@ -1,0 +1,31 @@
+@import '~antd/es/style/themes/default.less';
+
+.common-delete-modal {
+  .ant-modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 148px;
+
+    .confirm-delete-wrapper {
+      display: flex;
+      align-items: center;
+
+      span.anticon {
+        font-size: 40px;
+        color: @highlight-color;
+        margin-right: 14px;
+      }
+
+      span {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+
+  .ant-modal-footer {
+    border-top: none;
+    padding-bottom: 20px;
+  }
+}
